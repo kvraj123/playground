@@ -19,7 +19,7 @@ var maxProfits = function(prices) {
     }
     return prices[sellPrice] - prices[buyPrice];
 };
-
+// Best time to buy abd sell stocks
 
 var maxProfit = function(prices) {
     if (prices.length < 2) {

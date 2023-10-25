@@ -1,9 +1,10 @@
 let count = 0
 
-let cache = {}
-function factRecusive(num){
+function fibRecusive(){
+    let cache = {}
+
    return function fib(num) {
-    count ++;
+
     if(num in cache) {
         return cache[num]
     } else {
@@ -17,16 +18,55 @@ function factRecusive(num){
    } 
 }
 
-function fact(num){
-   
+function fib(num){
+    count ++;
+
         if(num < 2) {
             return num;
         }
-        return fact(num-1) + fact(num-2)
+        return fib(num-1) + fib(num-2)
+}
+// let fibFast =  fibRecusive()
+// console.log("fibFast",fibFast(10))
+// let fibslow = fib(10)
+// console.log("fibslow",fibslow)
+// console.log("count",count)l
+
+
+let countfact = 0;
+
+function fact(n) {
+    // countfact ++
+    if(n == 2) {
+        return n
+    }
+
+    return n * fact(n-1)
 }
 
+function factRecusive(){
+    let cache = {}
 
-console.log("fast",factRecusive()(10));
-console.log("slow",fact(10));
-console.log("let cache",cache)
-console.log("count",count)
+   return function fact(num) {
+    countfact ++;
+    if(num in cache) {
+        return cache[num]
+    } else {
+        if(num < 2) {
+            return num;
+        }
+        
+         cache[num] = num * fact(num-1)
+         return cache[num]
+    }
+   } 
+}
+let fastFact =  factRecusive();
+console.log("fast",fastFact(20));
+// console.log("slow",fact(20));
+console.log('countfact',countfact)
+
+
+// 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
+
+// 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

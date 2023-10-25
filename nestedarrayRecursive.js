@@ -10,7 +10,7 @@ function sum(arr) {
     return total
   };
 
-  function arraySum(i) {
+function arraySum(i) {
     var sum=0; // missing var added
     for(var a=0;a<i.length;a++){ // missing var added
         if(typeof i[a]=="number"){
@@ -24,5 +24,5 @@ function sum(arr) {
 
 
   let sumArray = [6,[5,2],[1,5],4]
-  console.log(sum(sumArray))
+  console.log(arraySum(sumArray))
 //   console.log(total)
