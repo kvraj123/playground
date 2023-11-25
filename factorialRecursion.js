@@ -36,7 +36,7 @@ function fib(num){
 let countfact = 0;
 
 function fact(n) {
-    // countfact ++
+    countfact ++
     if(n == 2) {
         return n
     }
@@ -49,22 +49,43 @@ function factRecusive(){
 
    return function fact(num) {
     countfact ++;
-    if(num in cache) {
-        return cache[num]
-    } else {
-        if(num < 2) {
+   
+        if(num == 2) {
             return num;
         }
+
+        if (cache[num] !== undefined) {
+            return cache[num];
+          }
         
          cache[num] = num * fact(num-1)
          return cache[num]
-    }
+    
    } 
 }
-let fastFact =  factRecusive();
-console.log("fast",fastFact(20));
+// let fastFact =  factRecusive();
+// console.log("fast",fastFact(20));
 // console.log("slow",fact(20));
-console.log('countfact',countfact)
+
+function factorial(n, memo = {}) {
+    // Base case: factorial of 0 and 1 is 1
+    if (n === 0 || n === 1) {
+      return 1;
+    }
+    console.log(memo[n])
+    // Check if the result is already memoized
+    if (memo[n] !== undefined) {
+      return memo[n];
+    }
+    countfact ++
+    // Calculate the factorial recursively and store it in the memo object
+    memo[n] = n * factorial(n - 1, memo);
+    return memo[n];
+  }
+
+  const result = factorial(5);
+
+  console.log('countfact',countfact,result)
 
 
 // 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
