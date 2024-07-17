@@ -15,6 +15,6 @@ function maxSubarraySum(nums) {
   }
   
   // Example usage:
-  let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+  let nums = [-2, 1, -3, 4, -1, 2, 1, -5, 6,7];
   let result = maxSubarraySum(nums);
   console.log("Maximum subarray sum:", result);
